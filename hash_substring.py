@@ -57,7 +57,7 @@ def get_occurrences(pattern, text):
 
 
 
-    return occurrences
+    return occurences
 
 
 # This part launches the functions
