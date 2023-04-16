@@ -1,6 +1,6 @@
 def read_input():
     fileorno = input().rstrip()
-    if fileorno== 'i':
+    if fileorno== 'I':
         fileorno= input().rstrip()
     elif fileorno== 'F':
         fileorno= input().rstrip()
