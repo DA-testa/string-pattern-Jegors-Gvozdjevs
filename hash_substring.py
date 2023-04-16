@@ -2,10 +2,10 @@ def read_input():
     fileorno = input().rstrip()
     if fileorno== 'i':
         fileorno= input().rstrip()
-    elif fileorno== 'f':
+    elif fileorno== 'F':
         fileorno= input().rstrip()
-        with open(file_name, 'r') as f:
-            inp=f.readline().rstrip()
+        with open(file_name, 'r') as F:
+            inp=F.readline().rstrip()
     else:
         raise ValueError('Invalid input type: {}'.format(input_type))
     
