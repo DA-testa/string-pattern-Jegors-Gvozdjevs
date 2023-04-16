@@ -4,7 +4,7 @@ def read_input():
         inp= input().rstrip()
     elif fileorno== 'F':
         file= input().rstrip()
-        with open(file, 'r') as F:
+        with open("tests/6"+file, 'r') as F:
             inp=F.readline().rstrip()
     else:
         raise ValueError('Invalid input type: {}'.format(fileorno))
