@@ -1,32 +1,66 @@
-# python3
-
 def read_input():
-    # this function needs to aquire input both from keyboard and file
-    # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
+    fileorno = input().rstrip()
+    if fileorno== 'i':
+        fileorno= input().rstrip()
+    elif fileorno== 'f':
+        fileorno= input().rstrip()
+        with open(file_name, 'r') as f:
+            inp=f.readline().rstrip()
+    else:
+        raise ValueError('Invalid input type: {}'.format(input_type))
     
-    
-    # after input type choice
-    # read two lines 
-    # first line is pattern 
-    # second line is text in which to look for pattern 
-    
-    # return both lines in one return
-    
-    # this is the sample return, notice the rstrip function
-    return (input().rstrip(), input().rstrip())
+    pattern = inp.rstrip()
+    text = input().rstrip()
+
+    return (pattern, text)
 
 def print_occurrences(output):
-    # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
 
 def get_occurrences(pattern, text):
-    # this function should find the occurances using Rabin Karp alghoritm 
+    
 
-    # and return an iterable variable
+    per= 101
+    nums= 256
+    occurences= []
+    ph= 0
+    th= 0
+    p= 1
+
+
+
+    for i in range(len(pattern)):
+        ph= (ph*nums + ord(pattern[i]))%per
+        text_hash = (th*nums+ ord(text[i]))%per
+        if i>0:
+            p= (p*nums)%per
+
+
+
+    for i in range(len(text) - len(pattern) + 1):
+        if ph ==th:
+            bool= True
+            for j in range(len(pattern)):
+                if text[i+j]!=pattern[j]:
+                    bool= False
+                    break
+            if bool:
+                occurences.append(i)
+
+
+
+
+        if i < len(text) - len(pattern):
+            th=((th-ord(text[i])*p)*nums+ ord(text[i+len(pattern)])) %per
+            if th< 0:
+                th+= per
+
+
+
     return [0]
 
 
-# this part launches the functions
+# This part launches the functions
 if __name__ == '__main__':
     print_occurrences(get_occurrences(*read_input()))
 
