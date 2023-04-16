@@ -1,7 +1,7 @@
 def read_input():
     fileorno = input().rstrip()
     if fileorno== 'I':
-        fileorno= input().rstrip()
+        inp= input().rstrip()
     elif fileorno== 'F':
         file= input().rstrip()
         with open(file, 'r') as F:
