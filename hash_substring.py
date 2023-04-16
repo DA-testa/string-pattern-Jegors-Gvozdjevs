@@ -2,6 +2,8 @@ def read_input():
     fileorno = input().rstrip()
     if fileorno== 'I':
         inp= input().rstrip()
+        pattern = inp.rstrip()
+        text = input().rstrip()
     elif fileorno== 'F':
         file= input().rstrip()
         with open("tests/6"+file, 'r') as F:
@@ -9,8 +11,7 @@ def read_input():
     else:
         raise ValueError('Invalid input type: {}'.format(fileorno))
     
-    pattern = inp.rstrip()
-    text = input().rstrip()
+    
 
     return (pattern, text)
 
@@ -51,7 +52,7 @@ def get_occurrences(pattern, text):
 
 
         if i < len(text) - len(pattern):
-            th=((th-ord(text[i])*p)*nums+ ord(text[i+len(pattern)])) %per
+            th=((th-ord(text[i])*p)*nums+ ord(text[i+len(pattern)]))%per
             if th< 0:
                 th+= per
 
