@@ -31,7 +31,7 @@ def get_occurrences(pattern, text):
 
     for i in range(len(pattern)):
         ph= (ph*nums + ord(pattern[i]))%per
-        text_hash = (th*nums+ ord(text[i]))%per
+        th = (th*nums+ ord(text[i]))%per
         if i>0:
             p= (p*nums)%per
 
@@ -57,7 +57,7 @@ def get_occurrences(pattern, text):
 
 
 
-    return [0]
+    return occurrences
 
 
 # This part launches the functions
