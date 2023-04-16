@@ -7,7 +7,7 @@ def read_input():
         with open(file_name, 'r') as F:
             inp=F.readline().rstrip()
     else:
-        raise ValueError('Invalid input type: {}'.format(input_type))
+        raise ValueError('Invalid input type: {}'.format(fileorno))
     
     pattern = inp.rstrip()
     text = input().rstrip()
